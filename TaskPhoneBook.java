@@ -8,20 +8,26 @@ public class TaskPhoneBook {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         Map<String,String> db = new HashMap<String,String>();
-        System.out.println("Введите ФИО :");
-        String fio = scan.nextLine();
-        System.out.println("Введите телефон :");
-        String tel = scan.nextLine();
-        System.out.println("Добавить в справочник данные? Да(y)/Нет(n)");
-        String choice = scan.nextLine();
-        while(choice=="y"){
+        
+        System.out.println("Добавить в справочник данные? Да(1)/Нет(0)");
+        int choice = scan.nextInt();
+
+        while(choice==1){
+            Scanner scan2 = new Scanner(System.in);
+            System.out.println("Введите ФИО : ");
+            String fio = scan2.next();
+            System.out.println("Введите телефон : ");
+            String tel = scan2.next();
             if (db.containsKey(fio)){
                 db.put(fio,db.get(fio) + "; " + tel);
             }else{
                 db.put(fio,tel);
             }
+            System.out.println("Добавить в справочник данные? Да(y)/Нет(n)");
+            choice = scan2.nextInt();
+
         }
-        System.out.println(db);
-    }
-    
+        scan.close();
+        System.out.println(db.values().size());
+    }  
 }
