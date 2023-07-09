@@ -1,5 +1,6 @@
 package HomeWork_5;
 
+
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -23,11 +24,15 @@ public class TaskPhoneBook {
             }else{
                 db.put(fio,tel);
             }
-            System.out.println("Добавить в справочник данные? Да(y)/Нет(n)");
+            System.out.println("Добавить в справочник данные? Да(1)/Нет(0)");
             choice = scan2.nextInt();
-
+            
         }
+        
         scan.close();
-        System.out.println(db.values().size());
+        System.out.println(db);
+     
     }  
+    
+    
 }
